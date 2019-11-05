@@ -5,7 +5,7 @@ class Oystercard
 def balance
   0
 end
-def deposit
+def deposit(gbp)
 end
 end
 
