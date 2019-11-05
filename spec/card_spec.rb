@@ -9,9 +9,8 @@ describe Oystercard do
     card = Oystercard.new
     expect(card).to respond_to(:balance)
   end
-
+  it 'card balance should start at zero' do
+    card = Oystercard.new
+    expect(card.balance).to eq(0)
   end
-  # it 'can find a balance' do
-  #   card = Oystercard.new
-  #   expect(card.balance).to respond_to(c)
-  # end
+  end
