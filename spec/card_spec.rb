@@ -26,4 +26,10 @@ describe Oystercard do
     card = Oystercard.new
     expect(card).to respond_to(:withdraw).with(1).argument
   end
+  it 'should update when money is withdrawn' do
+    card = Oystercard.new
+    card.deposit(20)
+    card.withdraw(15)
+    expect(card.balance).to eq(5)
+  end
   end
