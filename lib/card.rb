@@ -5,6 +5,8 @@ class Oystercard
 def balance
   0
 end
+def deposit
+end
 end
 
 #check balance/starting balance

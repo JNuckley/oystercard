@@ -5,7 +5,7 @@ describe Oystercard do
     card = Oystercard.new
     expect(card).to be_instance_of(Oystercard)
   end
-  it 'can respond to a balanace' do
+  it 'can respond to a balance' do
     card = Oystercard.new
     expect(card).to respond_to(:balance)
   end
@@ -15,6 +15,6 @@ describe Oystercard do
   end
   it 'should respond_to deposit' do
     card = Oystercard.new
-    expect(card).to respond_to(:deposit)
+    expect(card).to respond_to(:deposit).with(1).argument
   end
   end
