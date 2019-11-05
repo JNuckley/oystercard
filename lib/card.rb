@@ -1,16 +1,19 @@
 class Oystercard
 #   attr_reader :balance
-# def initialize
-#   @balance = 0
+#instance variable to allow balance to be used within the class
+def initialize
+  @balance = 0
+end
+#  balance method to allow updates
 def balance
-  0
+  @balance
 end
+#  deposit with single argument
 def deposit(gbp)
+  @balance = @balance + gbp
 end
-end
 
-#check balance/starting balance
-
-#add money to Oystercard
-
+# def withdraw(gbp)
+# end
 #remove money from Oystercard
+end
