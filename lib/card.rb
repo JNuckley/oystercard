@@ -1,8 +1,10 @@
 class Oystercard
-def initialize(balance = 0)
-  @balance = balance
+#   attr_reader :balance
+# def initialize
+#   @balance = 0
+
 end
-end
+
 #check balance/starting balance
 
 #add money to Oystercard
