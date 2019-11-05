@@ -13,4 +13,8 @@ describe Oystercard do
     card = Oystercard.new
     expect(card.balance).to eq(0)
   end
+  it 'should respond_to deposit' do
+    card = Oystercard.new
+    expect(card).to respond_to(:deposit)
+  end
   end
