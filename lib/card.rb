@@ -1,5 +1,7 @@
 class OysterCard
-  attr_reader :balance
+
+attr_reader :balance
+
 MAXIMUM_BALANCE = 90
   # instance variable to allow balance to be used within the class
   def initialize

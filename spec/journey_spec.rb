@@ -9,5 +9,16 @@ describe Journey do
 
   it { is_expected.to respond_to(:touch_in) }
 
+  it 'touch_in should return true' do
+    expect(journey.touch_in).to be(true)
+  end
+
+  it 'touch_out should return false' do
+      expect(journey.touch_out).to be(false)
+  end
+
+
+
+
   it { is_expected.to respond_to(:touch_out) }
 end
