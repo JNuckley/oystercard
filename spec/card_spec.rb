@@ -28,4 +28,6 @@ describe OysterCard do
     card.deduct(15)
     expect(card.balance).to eq(5)
   end
+
+  
 end
