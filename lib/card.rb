@@ -7,7 +7,7 @@ class OysterCard
   end
 
   # deposit with single argument
-  def deposit(gbp)
+  def top_up(gbp)
     @balance += gbp
   end
 
