@@ -19,9 +19,7 @@ MAXIMUM_BALANCE = 90
   @balance += gbp
   end
   # remove money from Oystercard
-  def deduct(gbp)
-    @balance -= gbp
-  end
+
 
   def touch_in
     fail "Less than £1" if @balance < MINIMUM_BALANCE
@@ -29,6 +27,14 @@ MAXIMUM_BALANCE = 90
   end
 
   def touch_out
+    deduct(MINIMUM_BALANCE)
     @in_journey = false
   end
+
+  private
+
+  def deduct(gbp)
+      @balance -= gbp
+  end
+
 end
