@@ -3,14 +3,13 @@
 class OysterCard
 
 attr_reader :balance
-attr_accessor :in_journey
-
+attr_reader :entry_station
 MINIMUM_BALANCE = 1
 MAXIMUM_BALANCE = 90
   # instance variable to allow balance to be used within the class
   def initialize
     @balance = 0
-    @in_journey = false
+    @entry_station = nil
   end
 
   # deposit with single argument
@@ -23,13 +22,15 @@ MAXIMUM_BALANCE = 90
 
   def touch_in
     fail "Less than £1" if @balance < MINIMUM_BALANCE
-    @in_journey = true
+    @entry_station = station
   end
 
   def touch_out
     deduct(MINIMUM_BALANCE)
-    @in_journey = false
+    @entry_station = nil
   end
+
+
 
   private
 

@@ -7,7 +7,7 @@ describe OysterCard do
 
   it { is_expected.to respond_to(:balance) }
 
-  it { is_expected.to respond_to(:in_journey) }
+  it { is_expected.to respond_to(:entry_station) }
 
   it 'card balance should start at zero' do
     expect(card.balance).to eq(0)
@@ -32,13 +32,15 @@ describe OysterCard do
 
   it { is_expected.to respond_to(:touch_out) }
 
+  it { is_expected.to respond_to(:in_journey?) }
+
   it 'touch out should return false' do
-      expect(card.touch_out).to be(false)
+      expect(card.touch_out).to be(nil)
   end
 
   it 'touch_out should change in_journey value to false' do
     card.touch_out
-    expect(card.in_journey).to eq(false)
+    expect(card.entry_station).to eq(nil)
   end
 
   it 'should update the balance with journeys' do
