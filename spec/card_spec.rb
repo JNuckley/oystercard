@@ -57,7 +57,12 @@ describe OysterCard do
     card.touch_out
     expect(card.in_journey?).to eq(nil)
   end
-  
+
+  it "should know its exit station" do
+    card.touch_out("Farringdon")
+    expect(card.exit_station).to eq("Farringdon")
+
+  end
   context 'When the minimum card limit is reached' do
     minimum_balance = OysterCard::MINIMUM_BALANCE
     it 'should raise an error: Limit reached' do

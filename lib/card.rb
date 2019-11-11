@@ -10,6 +10,7 @@ MAXIMUM_BALANCE = 90
   def initialize
     @balance = 0
     @entry_station = nil
+    
   end
 
   # deposit with single argument
