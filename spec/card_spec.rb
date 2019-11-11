@@ -51,8 +51,13 @@ describe OysterCard do
     card.top_up(10)
     card.touch_in("King's cross")
     expect(card.in_journey?).to eq("King's cross")
-
   end
+
+  it 'should know if it is not in journey' do
+    card.touch_out
+    expect(card.in_journey?).to eq(nil)
+  end
+  
   context 'When the minimum card limit is reached' do
     minimum_balance = OysterCard::MINIMUM_BALANCE
     it 'should raise an error: Limit reached' do
