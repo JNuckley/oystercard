@@ -25,7 +25,7 @@ describe OysterCard do
 
   it 'should update when money is withdrawn' do
     card.top_up(15)
-    card.touch_out
+    card.touch_out("Farringdon")
     expect(card.balance).to eq(14)
   end
   it { is_expected.to respond_to(:touch_in) }
@@ -34,17 +34,19 @@ describe OysterCard do
 
   it { is_expected.to respond_to(:in_journey?) }
 
-  it 'touch out should return false' do
-      expect(card.touch_out).to be(nil)
+  it 'touch out should return nil' do
+      expect(card.in_journey?).to be(nil)
   end
 
   it 'touch_out should change in_journey value to false' do
-    card.touch_out
+    card.touch_out("Farringdon")
     expect(card.entry_station).to eq(nil)
   end
 
   it 'should update the balance with journeys' do
-    expect{card.touch_out}.to change{card.balance}.by -1
+    card.top_up(5)
+    card.touch_out("Farringdon")
+    expect{card.touch_out("Farringdon")}.to change{card.balance}.by -1
   end
 
   it 'should know if the card is in journey' do
@@ -54,7 +56,7 @@ describe OysterCard do
   end
 
   it 'should know if it is not in journey' do
-    card.touch_out
+    card.touch_out("Farringdon")
     expect(card.in_journey?).to eq(nil)
   end
 
