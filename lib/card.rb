@@ -20,7 +20,7 @@ MAXIMUM_BALANCE = 90
   # remove money from Oystercard
 
 
-  def touch_in
+  def touch_in(station)
     fail "Less than £1" if @balance < MINIMUM_BALANCE
     @entry_station = station
   end
@@ -30,7 +30,9 @@ MAXIMUM_BALANCE = 90
     @entry_station = nil
   end
 
-
+  def in_journey?
+    @entry_station
+  end
 
   private
 
